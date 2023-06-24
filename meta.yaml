@@ -1,0 +1,43 @@
+{% set name = "django-simple-file-handler" %}
+{% set version = "0.3.3" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django_simple_file_handler-{{ version }}.tar.gz
+  sha256: 468f85655be90a55c867495f9cf64aad931a9107a245f0262fbbb6330359dd06
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - django >=3.2,<5.0
+    - pillow >=8.3.0
+    - xhtml2pdf >=0.2.5
+
+test:
+  imports:
+    - django_simple_file_handler
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://github.com/jonathanrickard/django-simple-file-handler
+  summary: A Django app for storing and processing documents and images
+  license: MIT
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - gb119
