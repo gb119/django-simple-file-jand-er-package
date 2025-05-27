@@ -1,13 +1,13 @@
 {% set name = "django-simple-file-handler" %}
-{% set version = "0.3.3" %}
+{% set version = "0.3.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django_simple_file_handler-{{ version }}.tar.gz
-  sha256: 468f85655be90a55c867495f9cf64aad931a9107a245f0262fbbb6330359dd06
+  url: https://files.pythonhosted.org/packages/d3/11/ecf144e17b1fd8331da9035ba8bd822e59cdba508f47f56a3077bc283152/django_simple_file_handler-0.3.5.tar.gz
+  sha256: 5e1b98c327c3b132658e580cf344b1ecaf501f47c0ad8017914c830cecbf9e40
 
 build:
   noarch: python
@@ -20,7 +20,7 @@ requirements:
     - pip
   run:
     - python
-    - django >=3.2,<5.0
+    - django >=4.2
     - pillow >=8.3.0
     - xhtml2pdf >=0.2.5
 
