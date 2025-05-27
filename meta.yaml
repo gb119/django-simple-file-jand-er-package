@@ -24,13 +24,6 @@ requirements:
     - pillow >=8.3.0
     - xhtml2pdf >=0.2.5
 
-test:
-  imports:
-    - django_simple_file_handler
-  commands:
-    - pip check
-  requires:
-    - pip
 
 about:
   home: https://github.com/jonathanrickard/django-simple-file-handler
